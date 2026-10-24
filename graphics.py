@@ -1,26 +1,26 @@
-import matplotlib.pyplot as plt
-import numpy as np
+import matplotlib.pyplot as plt   # Подключаем модуль pyplot из библиотеки matplotlib для построения графиков
+import numpy as np                # Подключаем библиотеку NumPy
 
-x = np.arange(-5, 6, 1)
-x1 = np.arange(1, 6, 1)
+x = np.arange(-5, 6, 1)   # Генерируем массив целых чисел от -5 до 5 с шагом 1 для функций x^2, x^3 и e^x
+x1 = np.arange(1, 6, 1)   # Генерируем массив целых чисел от 1 до 5 с шагом 1 специально для логарифма ln(x)
 
-y = x**2
-y1 = x**3
-y2 = np.exp(x)
-y3 = np.log(x1)
+y = x**2          # Вычисляем значения функции y = x^2
+y1 = x**3         # Вычисляем значения функции y = x^3
+y2 = np.exp(x)    # Вычисляем значения функции y = e^x
+y3 = np.log(x1)   # Вычисляем значения функции y = ln(x)
 
-plt.title("Графики функций: x^2, x^3, e^x, ln(x)", color = '#173554', fontstyle = "italic", fontweight = "bold")
-plt.xlabel("Ось x")
-plt.ylabel("Ось y")
-plt.ylim(-4, 15)
+plt.title("Графики функций: x^2, x^3, e^x, ln(x)", color = '#173554', fontstyle = "italic", fontweight = "bold")   #Создаем заголовок графика, делаем его темно-синим, курсивным и жирным
+plt.xlabel("Ось x")   # Подписываем горизонтальную координатную ось (ось абсцисс)
+plt.ylabel("Ось y")   # Подписываем вертикальную координатную ось (ось ординат)
+plt.ylim(-4, 15)   # Ограничиваем график по вертикали от -4 до 15
 plt.axhline(0, color = "black", linewidth = 1.5)
 plt.axvline(0, color = "black", linewidth = 1.5)
 ax = plt.gca()
-ax.set_facecolor("#ebff91")
-plt.gcf().set_facecolor("#ebff91")
-plt.plot(x, y, label = "y = x^2", color = "blue", marker='o', markersize=4)
-plt.plot(x, y1, label = "y = x^3", color = "green", marker='x', markersize=5)
-plt.plot(x, y2, label = "y = e^x", color = "red", marker='^', markersize=5)
-plt.plot(x1, y3, label = "y = ln(x)", color = "purple", marker='*', markersize=5)
-plt.legend()
-plt.show()
+ax.set_facecolor("#ebff91")          # Перекрашиваем внутренний фон графика
+plt.gcf().set_facecolor("#ebff91")   # Перекрашиваем внешний фон всего окна
+plt.plot(x, y, label = "y = x^2", color = "blue", marker='o', markersize=4)         # Создаем график функции у=х^2, цвет графика синий, точки на графике обозначаются кружочками
+plt.plot(x, y1, label = "y = x^3", color = "green", marker='x', markersize=5)       # Создаем график функции у=х^3, цвет графика зеленый, точки на графике обозначаются крестиками
+plt.plot(x, y2, label = "y = e^x", color = "red", marker='^', markersize=5)         # Создаем график функции у=е^х, цвет графика красный, точки на графике обозначаются треугольниками
+plt.plot(x1, y3, label = "y = ln(x)", color = "purple", marker='*', markersize=5)   # Создаем график функции у=ln(x), цвет графика фиолетовый, точки на графике обозначаются звездочками
+plt.legend()   # Создает окошко с названиями функций и их цветами
+plt.show()   # Выводим все на экран
